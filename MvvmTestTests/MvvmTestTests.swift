@@ -33,4 +33,16 @@ class MvvmTestTests: XCTestCase {
         }
     }
     
+    func testCarViewModelWithFerrariF12()  {
+        let  ferraryF12 = Car(model: "F12", make: "Ferrary", horsepower: 730, photoURL: "http://auto.ferrari.com/en_EN/wp-content/uploads/sites/5/2013/07/Ferrari-F12berlinetta.jpg")
+        let ferraryViewModel = CarViewModel(car: ferraryF12)
+        XCTAssertEqual(ferraryViewModel.modelText, "F12")
+        XCTAssertEqual(ferraryViewModel.makeText, "Ferrary")
+        XCTAssertEqual(ferraryViewModel.horsepowerText, "730 HP")
+        XCTAssertEqual(ferraryViewModel.photoURL, NSURL(string: ferraryF12.photoURL))
+        XCTAssertEqual(ferraryViewModel.titleText, "Ferrary F12")
+        
+        
+    }
+    
 }
